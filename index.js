@@ -1,3 +1,6 @@
+// Use port number from the PORT environment variable or 3000 if not specified
+const port = process.env.PORT || 3000;
+
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -22,6 +25,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log('listening on *:3000');
 });
